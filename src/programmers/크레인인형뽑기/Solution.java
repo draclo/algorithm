@@ -1,6 +1,5 @@
 package programmers.크레인인형뽑기;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 public class Solution {
@@ -27,15 +26,15 @@ public class Solution {
         int result = 0;
         for (int i = 0; i < moves.length; i++) {
             int num = moves[i] - 1;
-            if (stack[num].isEmpty()) {
-                continue;
+            if (!stack[num].isEmpty()) {
+                int pop = stack[num].pop();
+                if (!basket.isEmpty() && pop == basket.peek()) {
+                    basket.pop();
+                    result += 2;
+                } else {
+                    basket.push(pop);
+                }
             }
-            int pop = stack[num].pop();
-            if (!basket.isEmpty() && pop == basket.peek()) {
-                basket.pop();
-                result += 2;
-            }
-            basket.push(pop);
         }
 
         return result;
