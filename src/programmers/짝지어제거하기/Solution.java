@@ -20,7 +20,7 @@ public class Solution {
 
         return stack.isEmpty() ? 1 : 0;*/
 
-        Stack<Character> stack = new Stack<>();
+        /*Stack<Character> stack = new Stack<>();
 
         for(char c : s.toCharArray()){
             if(stack.size() == 0){
@@ -34,7 +34,21 @@ public class Solution {
             }
         }
 
-        return stack.size() > 0 ? 0 : 1;
+        return stack.size() > 0 ? 0 : 1;*/
+
+        Stack<Character> stack = new Stack<>();
+        stack.push(s.charAt(0));
+
+        for (int i = 1; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!stack.isEmpty() && stack.peek() == c) {
+                stack.pop();
+            } else {
+                stack.push(c);
+            }
+        }
+
+        return stack.isEmpty() ? 1 : 0;
     }
 
     public static void main(String[] args) {
