@@ -57,6 +57,35 @@ public class Solution {
         }
 
         return result;
+
+        /*int result = 0;
+        Map<Character,Character> map = new HashMap<>();
+        map.put(')','(');
+        map.put(']','[');
+        map.put('}','{');
+
+        int n = s.length();
+        s += s;
+
+        A:for (int i = 0; i < n; i++) {
+            Stack<Character> stack = new Stack<>();
+            for (int j = i; j < n + i; j++) {
+                char c = s.charAt(j);
+                if (!map.containsKey(c)) {
+                    stack.push(c);
+                } else {
+                    if (stack.isEmpty() || stack.pop() != map.get(c)){
+                        continue A;
+                    }
+                }
+            }
+
+            if (stack.isEmpty()) {
+                result++;
+            }
+        }
+
+        return result;*/
     }
 
     public static void main(String[] args) {
