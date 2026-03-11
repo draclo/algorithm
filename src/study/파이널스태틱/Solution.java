@@ -22,6 +22,6 @@ class Solution {
         System.out.println(s2.myCount);
 
         FinalTest f1 = new FinalTest();
-        f1.MAX = 200;
+        //f1.MAX = 200; // 에러
     }
 }
